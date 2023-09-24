@@ -3,23 +3,23 @@
 
 declare namespace API {
   type CurrentUser = {
-    id:number;
-    username?:string;
-    userAccount:string;
-    avatarUrl?:string;
-    gender?:string;
+    id: number;
+    username?: string;
+    userAccount: string;
+    avatarUrl?: string;
+    gender?: string;
     /*不需要密码*/
-    phone?:string;
-    email?:string;
-    userStatus?:number;
-    role:number;
-    createTime?:Date;
-    updateTime?:Date;
-
+    phone?: string;
+    email?: string;
+    userStatus?: number;
+    role: number;
+    createTime?: Date;
+    updateTime?: Date;
   };
 
   type LoginResult = {
     status?: string;
+    userAccount: string;
     type?: string;
     currentAuthority?: string;
   };
@@ -71,7 +71,7 @@ declare namespace API {
   type RegisterParams = {
     userAccount?: string;
     password?: string;
-    checkPassword?:string;
+    checkPassword?: string;
     type?: string;
   };
 

@@ -1,7 +1,8 @@
 // @ts-ignore
 /* eslint-disable */
-import { request } from 'umi';
-
+// import { request } from 'umi';
+// 为了让那个全局响应生效
+import request from '@/plugins/globleRequest';
 /** 获取所有用户 GET /api/user/getAllUsers */
 export async function getAllUsers(options?: { [key: string]: any }) {
   return request<API.CurrentUser[]>('/api/user/getAllUsers', {
@@ -47,7 +48,6 @@ export async function register(body: API.RegisterParams, options?: { [key: strin
     ...(options || {}),
   });
 }
-
 
 /** 此处后端没有提供注释 GET /api/notices */
 export async function getNotices(options?: { [key: string]: any }) {
