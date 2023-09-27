@@ -18,6 +18,18 @@ export default {
       changeOrigin: true,
     },
   },
+  //注意：proxy 功能仅在 dev 时有效。
+  // prod: {
+  //   // localhost:8000/api/** -> https://preview.pro.ant.design/api/**
+  //   /*有这个请求路径有这个/api/的话，我们就怼他进行一个代理*/
+  //   '/api/': {
+  //     // 要代理的地址
+  //     target: 'http://localhost:8902',
+  //     // 配置了这个可以从 http 代理到 https
+  //     // 依赖 origin 的功能可能需要这个，比如 cookie
+  //     changeOrigin: true,
+  //   },
+  // },
   test: {
     '/api/': {
       target: 'https://proapi.azurewebsites.net',

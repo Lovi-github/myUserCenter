@@ -8,12 +8,14 @@ import { history, Link } from 'umi';
 import defaultSettings from '../config/defaultSettings';
 import { currentUser as queryCurrentUser } from './services/ant-design-pro/api';
 import { RequestConfig } from '@@/plugin-request/request';
+import * as process from 'process';
 
 const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/user/login';
 const registerPath = '/user/register';
 const WHITE_LIST = [loginPath, registerPath];
-
+alert('process.env.NODE_ENV==>' + process.env.NODE_ENV);
+alert('REACT_APP_ENV==>' + REACT_APP_ENV);
 /** 获取用户信息比较慢的时候会展示一个 loading */
 export const initialStateConfig = {
   loading: <PageLoading />,
@@ -118,6 +120,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
     // 自定义 403 页面
     // unAccessible: <div>unAccessible</div>,
     // 增加一个 loading 的状态
+    //@ts-ignore
     childrenRender: (children, props) => {
       // if (initialState?.loading) return <PageLoading />;
       return (
